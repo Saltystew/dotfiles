@@ -1,0 +1,51 @@
+## made by Hunter Williams
+
+# default text color
+set color_win_fg=253
+
+# overall background color
+set color_win_bg=235
+
+# top title area
+set color_win_title_bg=236
+set color_win_title_fg=178
+
+### playing file colors ###
+# unselected currently playing track's text
+set color_win_cur=71
+
+# active selection for currently playing track
+set color_win_cur_sel_bg=71
+set color_win_cur_sel_fg=234
+
+# inactive selection for currently playing track
+set color_win_inactive_cur_sel_bg=110
+set color_win_inactive_cur_sel_fg=234
+
+### non-playing file colors ###
+# active selection
+set color_win_sel_bg=73
+set color_win_sel_fg=234
+
+# inactive selection
+set color_win_inactive_sel_bg=110
+set color_win_inactive_sel_fg=234
+
+# bottom title line
+set color_titleline_bg=236
+set color_titleline_fg=71
+
+# bottom status line
+set color_statusline_bg=235
+set color_statusline_fg=183
+
+# command-line colors
+set color_cmdline_bg=234
+set color_cmdline_fg=253
+set color_error=204
+set color_info=71
+set color_separator=236
+
+### file browser view colors ###
+# directory listing color
+set color_win_dir=default

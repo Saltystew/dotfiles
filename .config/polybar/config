@@ -1,0 +1,201 @@
+[colors]
+bg          = #0000000
+bg-alert    = #E53935
+fg          = #f3f4f5
+fg-inactive = #c7ccd1
+fg-alert    = #ea6361
+
+##############################
+##############################
+
+[bar/top_hdmi]
+monitor = HDMI-0
+bottom = true
+width = 1920
+height = 20
+override-redirect = false
+offset-x = 0
+offset-y = 0
+background = ${colors.bg}
+foreground = ${colors.fg}
+border-top-size = 3
+border-top-color = ${colors.bg}
+border-bottom-size = 0
+border-bottom-color = ${colors.bg}
+separator = |
+spacing = 0
+padding-left = 4
+padding-right = 4
+module-margin-left = 2
+module-margin-right = 2
+font-0 = FontAwesome:size=13;0
+font-1 = Roboto Regular:size=13;0
+font-2 = Font Awesome 5 Free:style=Regular:pixelsize=15;0
+font-3 = Font Awesome 5 Free:style=Solid:pixelsize=13;0
+font-4 = Font Awesome 5 Brands:style=Regular:pixelsize=12;0
+font-5 = Material Icons:style=Regular:pixelszie=18;4
+modules-left = i3
+modules-center = cmus
+modules-right = 
+fixed-center = true
+tray-position = right
+tray-padding = 5
+tray-detached = false
+
+##############################
+##############################
+
+[bar/bottom_dp]
+monitor = DP-2
+bottom = false
+width = 1920
+height = 25
+override-redirect = false
+offset-x = 0
+offset-y = 0
+underline-size = 1
+background = ${colors.bg}
+foreground = ${colors.fg}
+border-top-size = 3
+border-top-color = ${colors.bg}
+border-bottom-size = 0
+border-bottom-color = ${colors.bg}
+separator = |
+spacing = 0
+padding-left = 4
+padding-right = 4
+module-margin-left = 2
+module-margin-right = 2
+font-0 = FontAwesome:size=13;0
+font-1 = Roboto Regular:size=13;0
+font-2 = Font Awesome 5 Free:style=Regular:pixelsize=15;2
+font-3 = Font Awesome 5 Free:style=Solid:pixelsize=12;1
+font-4 = Font Awesome 5 Brands:style=Regular:pixelsize=12;1
+font-5 = Material Icons:style=Regular:pixelsize=18;4
+modules-left = i3
+modules-center = time date 
+modules-right = memory fs-root fs-home volume menu0
+fixed-center = true
+#tray-position = right
+#tray-padding = 2
+#tray-detached = false
+
+##############################
+##############################
+
+[module/i3]
+type = internal/i3
+pin-workspaces = true
+strip-wsnumbers = true
+format = <label-state> <label-mode>
+label-mode = %mode%
+label-mode-font = 2
+label-mode-padding = 2
+label-mode-background = #e60053
+label-focused = %name%
+label-focused-foreground = ${colors.fg}
+label-focused-padding = 1
+label-unfocused = %name%
+label-unfocused-padding = 1
+label-unfocused-foreground = ${colors.fg-inactive}
+label-visible = %name%
+label-visible-padding = 1
+label-urgent = %name%
+label-urgent-foreground = ${colors.fg-alert}
+label-urgent-padding = 1
+##############################
+##############################
+
+[module/time]
+type = internal/date
+interval = 5
+date = %B %d, %A
+time = %H:%M
+label = "%time%"
+##############################
+##############################
+
+[module/date]
+type = custom/script
+interval = 3600
+exec = ~/.config/polybar/date.sh
+tail = true
+format = <label>
+label = %output%
+
+##############################
+##############################
+
+[module/volume]
+type = internal/volume
+master-mixer = Master
+format-volume = <label-volume>
+label-volume =  %percentage%
+format-volume-margin = 0
+
+##############################
+##############################
+
+[module/menu0]
+type = custom/menu
+expand-right = true
+format = <label-toggle> <menu>
+format-padding = 0  
+menu-0-0 = System
+menu-0-0-exec = menu-open-1
+menu-1-0 = Standby
+menu-1-0-exec = systemctl suspend
+menu-1-1 = Restart
+menu-1-1-exec = reboot
+menu-1-2 = Power off
+menu-1-2-exec = poweroff
+label-open = 
+label-close = 
+label-separator = "  |  "
+
+##############################
+##############################
+
+[module/memory]
+type = internal/memory
+interval = 3
+format = <label>
+label =   %gb_used%
+
+##############################
+##############################
+
+[module/fs-root]
+type = internal/fs
+mount-0 = /
+interval = 30
+fixed-values = false
+spacing = 0
+label-mounted =   %free%
+
+##############################
+##############################
+
+[module/fs-home]
+type = internal/fs
+mount-0 = /home
+interval = 30
+fixed-values = false
+spacing = 0
+label-mounted =  %free%
+
+##############################
+##############################
+
+[module/cmus]
+type = custom/script
+exec = ~/.config/polybar/cmus.sh
+intervel = 1
+tail = true
+format-online = <label-online>
+format-offline = <label-offline>
+#format-prefix = " "
+label-online = %output%
+label-offline = "nope"
+
+

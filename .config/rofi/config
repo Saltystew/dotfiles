@@ -1,0 +1,12 @@
+rofi.color-enabled: true
+rofi.color-window: #262626, #2f343f, #757575
+rofi.color-normal: #262626, #f3f4f5, #262626, #262626, #5fafaf
+rofi.color-active: #262626, #f3f4f5, #262626, #262626, #5fafaf
+rofi.color-urgent: #262626, #f3f4f5, #262626, #262626, #5fafaf
+rofi.width: 375
+rofi.padding: 20
+rofi.font: Roboto Regular 18
+rofi.lines: 3
+rofi.bw: 5
+rofi.separator-style: solid
+rofi.hide-scrollbar: true
