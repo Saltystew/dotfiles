@@ -1,0 +1,5 @@
+alias dcrun='docker-compose -f /docker/compose/docker-compose.yml'
+alias dcedit='vi /docker/compose/docker-compose.yml'
+alias dclogs='docker-compose -f /docker/compose/docker-compose.yml logs -tf --tail="50"'
+alias dlogs='docker logs -tf --tail="50"'
+alias doc='docker'
