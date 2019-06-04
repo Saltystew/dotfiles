@@ -48,8 +48,14 @@ dockrun() {
   docker run -it geerlingguy/docker-"${1:-centos7}"-ansible /bin/bash
 }
 
+# Super useful Docker container oneshots
+# Usage: dockrun, or dockrun [centos7|fedora27|debian9|debian8|ubuntu1404|etc.]
+dockruntest() {
+  docker run -it geerlingguy/docker-"${1:-centos7}"-ansible:testing /bin/bash
+}
+
 # Enter a running Docker container
-function denter() {
+function dockenter() {
   if [[ ! "$1" ]] ; then
       echo "You must supply a container ID or name."
       return 0
@@ -68,20 +74,3 @@ knownrm() {
     sed -i '' "$1d" ~/.ssh/known_hosts
   fi
 }
-
-# Ask for confirmation when 'prod' is in a command string
-prod_command_trap () {
-  if [[ $BASH_COMMAND == *prod* ]]
-  then
-    read -p "Are you sure you want to run this command on prod [Y/n]? " -n 1 -r
-    if [[ $REPLY =~ ^[Yy]$ ]]
-    then
-      echo -e "\nRunning command \"$BASH_COMMAND\" \n"
-    else
-      echo -e "\nCommand was not run.\n"
-      return 1
-    fi
-  fi
-}
-shopt -s extdebug
-trap prod_command_trap DEBUG
