@@ -1,8 +1,0 @@
-alias cls='clear'
-alias ls='ls -h --color=always'
-alias ll='ls -hl --color=always'
-alias lsa='ls -lha --color=always'
-alias duh1='du -h --max-depth=1'
-alias sudo='sudo '
-alias publicip='dig +short myip.opendns.com @resolver1.opendns.com'
-alias vi='vim'
