@@ -44,13 +44,13 @@ function gsync() {
 
 # Super useful Docker container oneshots
 # Usage: dockrun, or dockrun [centos7|fedora27|debian9|debian8|ubuntu1404|etc.]
-dockrun() {
+docrun() {
   docker run -it geerlingguy/docker-"${1:-centos7}"-ansible /bin/bash
 }
 
 # Super useful Docker container oneshots
 # Usage: dockrun, or dockrun [centos7|fedora27|debian9|debian8|ubuntu1404|etc.]
-dockruntest() {
+docruntest() {
   docker run -it geerlingguy/docker-"${1:-centos7}"-ansible:testing /bin/bash
 }
 
