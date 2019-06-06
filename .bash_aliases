@@ -4,6 +4,7 @@ alias dclogs='docker-compose -f /docker/compose/docker-compose.yml logs -tf --ta
 alias dcrun='docker-compose -f /docker/compose/docker-compose.yml'
 alias dlogs='docker logs -tf --tail="50"'
 alias doc='docker'
+alias docps='docker ps --format "table {{.Names}}\t{{.Status}}"'
 alias duh1='du -h --max-depth=1'
 alias gc='git commit'
 alias gcam='git commit -am'
