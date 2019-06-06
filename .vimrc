@@ -1,5 +1,5 @@
 syntax on               " enable syntax highlighting
-set cursorline          " highlight the current line
+" set cursorline          " highlight the current line
 " set background=dark   " darker color scheme
 " set ruler             " show line number in bar
 set nobackup            " don't create pointless backup files; Use VCS instead
@@ -17,8 +17,8 @@ filetype plugin on      " enable filetype-specific plugins
 colorscheme desert
 
 " column-width visual indication
-let &colorcolumn=join(range(81,999),",")
-highlight ColorColumn ctermbg=235 guibg=#001D2F
+" let &colorcolumn=join(range(81,999),",")
+" highlight ColorColumn ctermbg=235 guibg=#001D2F
 
 " tabs and indenting
 set autoindent          " auto indenting
