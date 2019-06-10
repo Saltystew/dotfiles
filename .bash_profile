@@ -55,7 +55,7 @@ docruntest() {
 }
 
 # Enter a running Docker container
-function dockenter() {
+function docenter() {
   if [[ ! "$1" ]] ; then
       echo "You must supply a container ID or name."
       return 0
