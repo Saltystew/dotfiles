@@ -4,6 +4,7 @@ alias dclogs='docker-compose -f /docker/compose/docker-compose.yml logs -tf --ta
 alias dcrun='docker-compose -f /docker/compose/docker-compose.yml'
 alias dlogs='docker logs -tf --tail="50"'
 alias doc='docker'
+alias docprune='yes y | docker system prune; yes y | docker volume prune'
 alias docps='docker ps --format "table {{.Names}}\t{{.Status}}"'
 alias docpsa='docker ps -a --format "table {{.Names}}\t{{.Status}}"'
 alias duh1='du -h --max-depth=1'
